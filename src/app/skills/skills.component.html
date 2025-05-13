@@ -10,16 +10,16 @@
         <mat-icon>{{category.icon}}</mat-icon>
         <span>{{category.name}}</span>
       </ng-template>
-      
+
       <div class="skills-container">
         <div class="skill-item" *ngFor="let skill of category.skills">
           <div class="skill-header">
             <h4>{{skill.name}}</h4>
             <span class="skill-level" [ngClass]="getLevelClass(skill.level)">{{skill.level}}%</span>
           </div>
-          <mat-progress-bar 
-            mode="determinate" 
-            [value]="skill.level" 
+          <mat-progress-bar
+            mode="determinate"
+            [value]="skill.level"
             [color]="getLevelClass(skill.level) === 'expert' ? 'primary' : 'accent'">
           </mat-progress-bar>
         </div>
@@ -44,28 +44,28 @@
           <div class="certification-icon">
             <mat-icon>school</mat-icon>
           </div>
-          <h4>Bachelor of Science in Computer Science</h4>
-          <p>University of Technology, 2019 - 2023</p>
+          <h4>Bachelor of Science in Information and Communication Technology (ICT)</h4>
+          <p>Silesian University of Technology, 2020 - 2024</p>
         </mat-card-content>
       </mat-card>
-      
+
       <mat-card class="certification-card">
         <mat-card-content>
           <div class="certification-icon">
             <mat-icon>verified</mat-icon>
           </div>
-          <h4>Angular Certified Developer</h4>
-          <p>Google, 2023</p>
+          <h4>Digital Signal Processing</h4>
+          <p>Nokia, 2023</p>
         </mat-card-content>
       </mat-card>
-      
+
       <mat-card class="certification-card">
         <mat-card-content>
           <div class="certification-icon">
-            <mat-icon>card_membership</mat-icon>
+            <mat-icon>work</mat-icon>
           </div>
-          <h4>AWS Certified Developer</h4>
-          <p>Amazon Web Services, 2024</p>
+          <h4>Angular Frontend Developer</h4>
+          <p>Comarch SA, since 2022</p>
         </mat-card-content>
       </mat-card>
     </div>

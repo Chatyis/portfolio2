@@ -17,7 +17,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './intro.component.scss'
 })
 export class IntroComponent {
-  name: string = 'John Doe';
+  name: string = 'Michał Czyż';
   title: string = 'Full Stack Developer';
   description: string = 'I build modern web applications with Angular, Node.js, and other cutting-edge technologies.';
 }

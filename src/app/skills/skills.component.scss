@@ -5,14 +5,13 @@
 .section-header {
   text-align: center;
   margin-bottom: 3rem;
-  
+
   h2 {
     font-size: 2.5rem;
     font-weight: 700;
     color: #3f51b5;
-    margin-bottom: 0.5rem;
   }
-  
+
   p {
     font-size: 1.25rem;
     color: #666;
@@ -23,19 +22,19 @@
 
 .skills-tabs {
   margin-bottom: 3rem;
-  
+
   ::ng-deep .mat-mdc-tab-header {
     margin-bottom: 2rem;
   }
-  
+
   ::ng-deep .mat-mdc-tab-label-container {
     background-color: #f9f9f9;
     border-radius: 8px;
   }
-  
+
   ::ng-deep .mat-mdc-tab {
     height: 64px;
-    
+
     .mat-icon {
       margin-right: 8px;
     }
@@ -57,7 +56,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.5rem;
-  
+
   h4 {
     font-size: 1.1rem;
     font-weight: 500;
@@ -69,24 +68,24 @@
 .skill-level {
   font-size: 0.9rem;
   font-weight: 600;
-  
+
   &.beginner {
-    color: #ff9800;
+    color: #ff9800; // Matches our warn palette
   }
-  
+
   &.intermediate {
-    color: #2196f3;
+    color: #2196f3; // Matches our accent palette
   }
-  
+
   &.expert {
-    color: #4caf50;
+    color: #3f51b5; // Matches our primary palette
   }
 }
 
 .tools-section,
 .certifications-section {
   margin-top: 4rem;
-  
+
   h3 {
     font-size: 1.75rem;
     font-weight: 600;
@@ -99,7 +98,7 @@
 .tools-container {
   display: flex;
   justify-content: center;
-  
+
   mat-chip-set {
     display: flex;
     flex-wrap: wrap;
@@ -118,7 +117,7 @@
 .certification-card {
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
-  
+
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
@@ -127,7 +126,7 @@
 
 .certification-icon {
   margin-bottom: 1rem;
-  
+
   .mat-icon {
     font-size: 2.5rem;
     height: 2.5rem;
@@ -151,16 +150,16 @@
   .skills-container {
     grid-template-columns: 1fr;
   }
-  
+
   .certifications-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .section-header {
     h2 {
       font-size: 2rem;
     }
-    
+
     p {
       font-size: 1.1rem;
     }

@@ -16,21 +16,21 @@
 
 .intro-text {
   flex: 1;
-  
+
   h1 {
     font-size: 3rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     font-weight: 700;
     color: #3f51b5;
   }
-  
+
   h2 {
     font-size: 1.75rem;
     margin-bottom: 1.5rem;
     font-weight: 500;
     color: #555;
   }
-  
+
   p {
     font-size: 1.25rem;
     margin-bottom: 2rem;
@@ -44,7 +44,7 @@
   display: flex;
   gap: 1rem;
   margin-top: 1.5rem;
-  
+
   a {
     mat-icon {
       margin-right: 0.5rem;
@@ -57,7 +57,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   .profile-image {
     max-width: 350px;
     border-radius: 50%;
@@ -71,14 +71,17 @@
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   color: #666;
   animation: bounce 1.5s infinite;
-  
+  align-items: center;
+  cursor: pointer;
+
   span {
     font-size: 0.9rem;
-    margin-bottom: 0.25rem;
+  }
+
+  &:hover {
+    text-decoration: underline;
   }
 }
 
@@ -98,7 +101,7 @@
   animation: fadeIn 0.8s ease-out forwards;
   opacity: 0;
   transform: translateY(20px);
-  
+
   &:nth-child(1) { animation-delay: 0.1s; }
   &:nth-child(2) { animation-delay: 0.3s; }
   &:nth-child(3) { animation-delay: 0.5s; }
@@ -117,29 +120,29 @@
     flex-direction: column-reverse;
     text-align: center;
   }
-  
+
   .intro-text {
     h1 {
       font-size: 2.5rem;
     }
-    
+
     h2 {
       font-size: 1.5rem;
     }
-    
+
     p {
       font-size: 1.1rem;
     }
   }
-  
+
   .intro-image {
     margin-bottom: 2rem;
-    
+
     .profile-image {
       max-width: 200px;
     }
   }
-  
+
   .cta-buttons {
     justify-content: center;
   }

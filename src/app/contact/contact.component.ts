@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
+import { MailService } from '../../shared/services/mail.service';
 
 @Component({
   selector: 'app-contact',
@@ -26,16 +27,18 @@ import { MatCardModule } from '@angular/material/card';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
+  private readonly _mailService = inject(MailService)
+
   contactForm: FormGroup;
-  
+
   contactInfo = {
-    email: 'hello@example.com',
+    email: 'michalczyz02@gmail.com',
     phone: '+1 (123) 456-7890',
-    address: '123 Main Street, City, Country',
+    location: 'Poland, Gliwice',
     social: {
-      github: 'https://github.com/username',
-      linkedin: 'https://linkedin.com/in/username',
-      twitter: 'https://twitter.com/username'
+      github: 'https://github.com/chatyis',
+      linkedin: 'https://www.linkedin.com/in/micha%C5%82-czy%C5%BC-16006122b',
+      mail: 'mailto:michalczyz02@gmail.com'
     }
   };
 
@@ -43,21 +46,20 @@ export class ContactComponent {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
-      subject: ['', Validators.required],
+      title: ['', Validators.required],
       message: ['', [Validators.required, Validators.minLength(10)]]
     });
   }
 
-  onSubmit() {
+  protected onSubmit(): void {
     if (this.contactForm.valid) {
-      // In a real application, you would send the form data to a backend API
-      console.log('Form submitted:', this.contactForm.value);
-      
+      this._mailService.sendEmail(this.contactForm.value);
+
       this.snackBar.open('Your message has been sent successfully!', 'Close', {
         duration: 5000,
         panelClass: ['success-snackbar']
       });
-      
+
       this.contactForm.reset();
     } else {
       this.snackBar.open('Please fill all required fields correctly.', 'Close', {

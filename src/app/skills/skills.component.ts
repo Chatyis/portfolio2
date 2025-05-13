@@ -38,11 +38,11 @@ export class SkillsComponent {
       name: 'Frontend Development',
       icon: 'devices',
       skills: [
+        { name: 'Angular', level: 90 },
         { name: 'HTML/CSS', level: 90 },
         { name: 'JavaScript', level: 85 },
         { name: 'TypeScript', level: 85 },
-        { name: 'Angular', level: 90 },
-        { name: 'React', level: 75 },
+        { name: 'Tailwind CSS', level: 75 },
         { name: 'SCSS/SASS', level: 85 }
       ]
     },
@@ -54,17 +54,7 @@ export class SkillsComponent {
         { name: 'Express', level: 75 },
         { name: '.NET Core', level: 70 },
         { name: 'RESTful APIs', level: 85 },
-        { name: 'GraphQL', level: 60 }
-      ]
-    },
-    {
-      name: 'Databases',
-      icon: 'storage',
-      skills: [
-        { name: 'MongoDB', level: 75 },
-        { name: 'MySQL', level: 70 },
-        { name: 'PostgreSQL', level: 65 },
-        { name: 'Firebase', level: 80 }
+        { name: 'MongoDB', level: 60 }
       ]
     },
     {
@@ -75,14 +65,14 @@ export class SkillsComponent {
         { name: 'Docker', level: 65 },
         { name: 'CI/CD', level: 70 },
         { name: 'Figma', level: 75 },
-        { name: 'Agile/Scrum', level: 80 }
+        { name: 'Jira', level: 80 }
       ]
     }
   ];
 
   tools: string[] = [
-    'VS Code', 'Git', 'GitHub', 'NPM', 'Webpack', 
-    'Docker', 'Figma', 'Photoshop', 'JIRA', 'Slack'
+    'IntelliJ', 'Git', 'GitHub', 'NPM', 'Gitlab',
+    'Docker', 'Figma', 'Aseprite', 'JIRA'
   ];
 
   getLevelClass(level: number): string {
