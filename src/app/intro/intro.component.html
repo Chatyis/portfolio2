@@ -1,0 +1,28 @@
+<section class="intro-section">
+  <div class="intro-content">
+    <div class="intro-text">
+      <h1 class="animate-in">Hi, I'm {{name}}</h1>
+      <h2 class="animate-in">{{title}}</h2>
+      <p class="animate-in">{{description}}</p>
+      <div class="cta-buttons animate-in">
+        <a routerLink="/projects" mat-raised-button color="primary">
+          <mat-icon>work</mat-icon>
+          View My Work
+        </a>
+        <a routerLink="/contact" mat-stroked-button>
+          <mat-icon>email</mat-icon>
+          Contact Me
+        </a>
+      </div>
+    </div>
+    <div class="intro-image animate-in">
+      <!-- Replace with actual image URL -->
+      <img src="assets/profile.png" alt="Profile picture" class="profile-image">
+    </div>
+  </div>
+  
+  <div class="scroll-indicator animate-in">
+    <span>Scroll Down</span>
+    <mat-icon>keyboard_arrow_down</mat-icon>
+  </div>
+</section>

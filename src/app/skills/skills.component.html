@@ -1,0 +1,73 @@
+<section class="skills-section">
+  <div class="section-header">
+    <h2>My Skills</h2>
+    <p>A comprehensive overview of my technical expertise and abilities</p>
+  </div>
+
+  <mat-tab-group mat-align-tabs="center" animationDuration="500ms" class="skills-tabs">
+    <mat-tab *ngFor="let category of skillCategories">
+      <ng-template mat-tab-label>
+        <mat-icon>{{category.icon}}</mat-icon>
+        <span>{{category.name}}</span>
+      </ng-template>
+      
+      <div class="skills-container">
+        <div class="skill-item" *ngFor="let skill of category.skills">
+          <div class="skill-header">
+            <h4>{{skill.name}}</h4>
+            <span class="skill-level" [ngClass]="getLevelClass(skill.level)">{{skill.level}}%</span>
+          </div>
+          <mat-progress-bar 
+            mode="determinate" 
+            [value]="skill.level" 
+            [color]="getLevelClass(skill.level) === 'expert' ? 'primary' : 'accent'">
+          </mat-progress-bar>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+  <div class="tools-section">
+    <h3>Tools & Software I Use</h3>
+    <div class="tools-container">
+      <mat-chip-set>
+        <mat-chip *ngFor="let tool of tools">{{tool}}</mat-chip>
+      </mat-chip-set>
+    </div>
+  </div>
+
+  <div class="certifications-section">
+    <h3>Certifications & Education</h3>
+    <div class="certifications-grid">
+      <mat-card class="certification-card">
+        <mat-card-content>
+          <div class="certification-icon">
+            <mat-icon>school</mat-icon>
+          </div>
+          <h4>Bachelor of Science in Computer Science</h4>
+          <p>University of Technology, 2019 - 2023</p>
+        </mat-card-content>
+      </mat-card>
+      
+      <mat-card class="certification-card">
+        <mat-card-content>
+          <div class="certification-icon">
+            <mat-icon>verified</mat-icon>
+          </div>
+          <h4>Angular Certified Developer</h4>
+          <p>Google, 2023</p>
+        </mat-card-content>
+      </mat-card>
+      
+      <mat-card class="certification-card">
+        <mat-card-content>
+          <div class="certification-icon">
+            <mat-icon>card_membership</mat-icon>
+          </div>
+          <h4>AWS Certified Developer</h4>
+          <p>Amazon Web Services, 2024</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</section>
