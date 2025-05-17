@@ -1,18 +1,20 @@
 <mat-toolbar color="primary" class="header-toolbar">
   <a routerLink="/" class="logo">Portfolio</a>
-  
+
   <!-- Desktop Navigation -->
   <div class="desktop-nav">
-    <div *ngFor="let link of navLinks">
-      <a 
-        [routerLink]="link.path" 
-        routerLinkActive="active-link"
-        [routerLinkActiveOptions]="{exact: link.path === ''}"
-        mat-button>
-        <mat-icon>{{link.icon}}</mat-icon>
-        <span>{{link.label}}</span>
-      </a>
-    </div>
+    @for (link of navLinks; track link) {
+      <div>
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{exact: link.path === ''}"
+          mat-button>
+          <mat-icon>{{link.icon}}</mat-icon>
+          <span>{{link.label}}</span>
+        </a>
+      </div>
+    }
   </div>
 
   <!-- Mobile Navigation -->
@@ -21,14 +23,15 @@
   </button>
 
   <mat-menu #menu="matMenu">
-    <button 
-      *ngFor="let link of navLinks" 
-      mat-menu-item 
-      [routerLink]="link.path"
-      routerLinkActive="active-link"
-      [routerLinkActiveOptions]="{exact: link.path === ''}">
-      <mat-icon>{{link.icon}}</mat-icon>
-      <span>{{link.label}}</span>
-    </button>
+    @for (link of navLinks; track link) {
+      <button
+        mat-menu-item
+        [routerLink]="link.path"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{exact: link.path === ''}">
+        <mat-icon>{{link.icon}}</mat-icon>
+        <span>{{link.label}}</span>
+      </button>
+    }
   </mat-menu>
 </mat-toolbar>

@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -7,13 +6,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
+
 import { MailService } from '../../shared/services/mail.service';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
   imports: [
-    CommonModule,
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
@@ -22,7 +21,7 @@ import { MailService } from '../../shared/services/mail.service';
     MatIconModule,
     MatSnackBarModule,
     MatCardModule
-  ],
+],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
