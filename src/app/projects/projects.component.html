@@ -4,55 +4,7 @@
     <p>Here are some of the projects I've worked on</p>
   </div>
 
-  <div class="featured-projects" *ngIf="featuredProjects.length > 0">
-    <h3>Featured Projects</h3>
-    <div class="projects-grid">
-      <mat-card class="project-card" *ngFor="let project of featuredProjects">
-        <img mat-card-image [src]="project.imageUrl" [alt]="project.title" class="project-image">
-        <mat-card-content>
-          <h4>{{project.title}}</h4>
-          <p>{{project.description}}</p>
-          <div class="tech-stack">
-            <mat-chip-set>
-              <mat-chip *ngFor="let tech of project.technologies">{{tech}}</mat-chip>
-            </mat-chip-set>
-          </div>
-        </mat-card-content>
-        <mat-card-actions>
-          <a mat-button color="primary" [href]="project.githubUrl" target="_blank" *ngIf="project.githubUrl">
-            <mat-icon>code</mat-icon> Code
-          </a>
-          <a mat-button color="accent" [href]="project.liveUrl" target="_blank" *ngIf="project.liveUrl">
-            <mat-icon>launch</mat-icon> Live Demo
-          </a>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-  </div>
+  <app-projects-list [projects]="featuredProjects" title="Featured Projects"></app-projects-list>
 
-  <div class="all-projects">
-    <h3>All Projects</h3>
-    <div class="projects-grid">
-      <mat-card class="project-card" *ngFor="let project of projects">
-        <img mat-card-image [src]="project.imageUrl" [alt]="project.title" class="project-image">
-        <mat-card-content>
-          <h4>{{project.title}}</h4>
-          <p>{{project.description}}</p>
-          <div class="tech-stack">
-            <mat-chip-set>
-              <mat-chip *ngFor="let tech of project.technologies">{{tech}}</mat-chip>
-            </mat-chip-set>
-          </div>
-        </mat-card-content>
-        <mat-card-actions>
-          <a mat-button color="primary" [href]="project.githubUrl" target="_blank" *ngIf="project.githubUrl">
-            <mat-icon>code</mat-icon> Code
-          </a>
-          <a mat-button color="accent" [href]="project.liveUrl" target="_blank" *ngIf="project.liveUrl">
-            <mat-icon>launch</mat-icon> Live Demo
-          </a>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-  </div>
+  <app-projects-list [projects]="projects" title="All Projects"></app-projects-list>
 </section>

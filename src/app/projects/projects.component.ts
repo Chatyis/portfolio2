@@ -5,7 +5,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 
-interface Project {
+import { ProjectsListComponent } from './projects-list/projects-list.component';
+
+export interface Project {
   id: number;
   title: string;
   description: string;
@@ -24,7 +26,8 @@ interface Project {
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    MatChipsModule
+    MatChipsModule,
+    ProjectsListComponent
   ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
@@ -33,41 +36,38 @@ export class ProjectsComponent {
   projects: Project[] = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce application with product catalog, shopping cart, and payment processing.',
-      imageUrl: 'assets/projects/ecommerce.jpg',
-      technologies: ['Angular', 'Node.js', 'Express', 'MongoDB'],
-      githubUrl: 'https://github.com/username/ecommerce',
-      liveUrl: 'https://ecommerce-project.demo',
+      title: '5 dominant colors determination',
+      description: 'Project focused strictly on logic part, this full-stack web application\'s purpose is to determine 5 dominant colors on the passed image with selected parameters',
+      imageUrl: 'assets/projects/project1.png',
+      technologies: ['Angular', 'Django', 'NumPy', 'OpenCV2', 'Skimage'],
+      githubUrl: 'https://github.com/Chatyis/5-Dominant-Colors-Determination',
       featured: true
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'A productivity app for managing tasks with drag-and-drop functionality and collaboration features.',
-      imageUrl: 'assets/projects/tasks.jpg',
-      technologies: ['React', 'Firebase', 'Material UI'],
-      githubUrl: 'https://github.com/username/tasks',
-      liveUrl: 'https://tasks-project.demo',
+      title: 'Portfolio Website',
+      description: 'A responsive portfolio website built with Angular and Material Design.',
+      imageUrl: 'assets/projects/project3.png',
+      technologies: ['Angular', 'TypeScript', 'SCSS'],
+      githubUrl: 'https://github.com/Chatyis/portfolio2',
+      liveUrl: 'https://portfolio.mczyz.dev/',
       featured: true
     },
     {
       id: 3,
-      title: 'Weather Dashboard',
-      description: 'A weather application that displays current conditions and forecasts using a third-party API.',
-      imageUrl: 'assets/projects/weather.jpg',
-      technologies: ['JavaScript', 'HTML/CSS', 'OpenWeather API'],
-      githubUrl: 'https://github.com/username/weather',
+      title: 'Quiz App',
+      description: 'Player can select variety of categories and answer questions to get score, alternatively user can choose to log in as a guest. For logged in players score is saved and results in getting higher levels in categories',
+      imageUrl: 'assets/projects/project4.png',
+      technologies: ['Angular', 'Angular Material (M3)', 'Tailwind CSS', '.NET Core', "SQL", "Dapper"],
+      githubUrl: 'https://github.com/Chatyis/Quiz-App',
       featured: false
     },
     {
       id: 4,
-      title: 'Portfolio Website',
-      description: 'A responsive portfolio website built with Angular and Material Design.',
-      imageUrl: 'assets/projects/portfolio.jpg',
-      technologies: ['Angular', 'TypeScript', 'SCSS'],
-      githubUrl: 'https://github.com/username/portfolio',
-      liveUrl: 'https://portfolio.demo',
+      title: 'Company page',
+      description: 'One view company page',
+      imageUrl: 'assets/projects/project2.png',
+      technologies: ['React', 'Tailwind CSS', 'Gatsby'],
       featured: false
     }
   ];
