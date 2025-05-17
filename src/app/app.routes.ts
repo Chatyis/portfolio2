@@ -1,13 +1,9 @@
 import { Routes } from '@angular/router';
-import { IntroComponent } from './intro/intro.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { SkillsComponent } from './skills/skills.component';
-import { ContactComponent } from './contact/contact.component';
 
 export const routes: Routes = [
-  { path: '', component: IntroComponent },
-  { path: 'projects', component: ProjectsComponent },
-  { path: 'skills', component: SkillsComponent },
-  { path: 'contact', component: ContactComponent },
+  { path: '', loadComponent: () => import('./intro/intro.component').then(m => m.IntroComponent) },
+  { path: 'projects', loadComponent: () => import('./projects/projects.component').then(m => m.ProjectsComponent) },
+  { path: 'skills', loadComponent: () => import('./skills/skills.component').then(m => m.SkillsComponent) },
+  { path: 'contact', loadComponent: () => import('./contact/contact.component').then(m => m.ContactComponent) },
   { path: '**', redirectTo: '' }
 ];
