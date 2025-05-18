@@ -6,7 +6,6 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-intro',
-  standalone: true,
   imports: [
     MatButtonModule,
     MatIconModule,
@@ -16,7 +15,4 @@ import { RouterLink } from '@angular/router';
   styleUrl: './intro.component.scss'
 })
 export class IntroComponent {
-  name: string = 'Michał Czyż';
-  title: string = 'Full Stack Developer';
-  description: string = 'I build modern web applications with Angular, Node.js, and other cutting-edge technologies.';
 }

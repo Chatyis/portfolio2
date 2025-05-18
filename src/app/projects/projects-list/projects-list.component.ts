@@ -4,8 +4,8 @@ import { MatCard, MatCardActions, MatCardContent, MatCardImage } from "@angular/
 import { MatChip, MatChipSet } from "@angular/material/chips";
 
 import { MatIcon } from '@angular/material/icon';
+import { Project } from '../../../shared/models/project.model';
 
-import { Project } from '../projects.component';
 
 @Component({
   selector: 'app-projects-list',

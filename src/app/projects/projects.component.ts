@@ -6,21 +6,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 
 import { ProjectsListComponent } from './projects-list/projects-list.component';
-
-export interface Project {
-  id: number;
-  title: string;
-  description: string;
-  imageUrl: string;
-  technologies: string[];
-  githubUrl?: string;
-  liveUrl?: string;
-  featured: boolean;
-}
+import { Project } from '../../shared/models/project.model';
 
 @Component({
   selector: 'app-projects',
-  standalone: true,
   imports: [
     MatButtonModule,
     MatCardModule,
@@ -47,7 +36,7 @@ export class ProjectsComponent {
       title: 'Portfolio Website',
       description: 'A responsive portfolio website built with Angular and Material Design.',
       imageUrl: 'assets/projects/project3.png',
-      technologies: ['Angular', 'TypeScript', 'SCSS'],
+      technologies: ['Angular', 'Angular Material', 'TypeScript', 'SCSS'],
       githubUrl: 'https://github.com/Chatyis/portfolio2',
       liveUrl: 'https://portfolio.mczyz.dev/',
       featured: true
@@ -57,7 +46,7 @@ export class ProjectsComponent {
       title: 'Quiz App',
       description: 'Player can select variety of categories and answer questions to get score, alternatively user can choose to log in as a guest. For logged in players score is saved and results in getting higher levels in categories',
       imageUrl: 'assets/projects/project4.png',
-      technologies: ['Angular', 'Angular Material (M3)', 'Tailwind CSS', '.NET Core', "SQL", "Dapper"],
+      technologies: ['Angular', 'Angular Material', 'Tailwind CSS', '.NET Core', "SQL", "Dapper"],
       githubUrl: 'https://github.com/Chatyis/Quiz-App',
       featured: false
     },

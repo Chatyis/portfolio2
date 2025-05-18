@@ -8,7 +8,6 @@ import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-header',
-  standalone: true,
   imports: [
     RouterLink,
     RouterLinkActive,
@@ -21,7 +20,7 @@ import { MatMenuModule } from '@angular/material/menu';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  navLinks = [
+  protected readonly navLinks = [
     { path: '', label: 'Home', icon: 'home' },
     { path: 'projects', label: 'Projects', icon: 'work' },
     { path: 'skills', label: 'Skills', icon: 'code' },

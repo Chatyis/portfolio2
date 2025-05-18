@@ -11,7 +11,6 @@ import { MailService } from '../../shared/services/mail.service';
 
 @Component({
   selector: 'app-contact',
-  standalone: true,
   imports: [
     FormsModule,
     ReactiveFormsModule,
@@ -26,16 +25,13 @@ import { MailService } from '../../shared/services/mail.service';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
-  private fb = inject(FormBuilder);
-  private snackBar = inject(MatSnackBar);
-
+  private readonly _fb = inject(FormBuilder);
+  private readonly _snackBar = inject(MatSnackBar);
   private readonly _mailService = inject(MailService)
 
-  contactForm: FormGroup;
-
-  contactInfo = {
+  protected contactForm: FormGroup;
+  readonly contactInfo = {
     email: 'michalczyz02@gmail.com',
-    phone: '+1 (123) 456-7890',
     location: 'Poland, Gliwice',
     social: {
       github: 'https://github.com/chatyis',
@@ -45,7 +41,7 @@ export class ContactComponent {
   };
 
   constructor() {
-    this.contactForm = this.fb.group({
+    this.contactForm = this._fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
       title: ['', Validators.required],
@@ -57,14 +53,14 @@ export class ContactComponent {
     if (this.contactForm.valid) {
       this._mailService.sendEmail(this.contactForm.value);
 
-      this.snackBar.open('Your message has been sent successfully!', 'Close', {
+      this._snackBar.open('Your message has been sent successfully!', 'Close', {
         duration: 5000,
         panelClass: ['success-snackbar']
       });
 
       this.contactForm.reset();
     } else {
-      this.snackBar.open('Please fill all required fields correctly.', 'Close', {
+      this._snackBar.open('Please fill all required fields correctly.', 'Close', {
         duration: 5000,
         panelClass: ['error-snackbar']
       });

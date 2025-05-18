@@ -1,7 +1,6 @@
 <mat-toolbar color="primary" class="header-toolbar">
   <a routerLink="/" class="logo">Portfolio</a>
 
-  <!-- Desktop Navigation -->
   <div class="desktop-nav">
     @for (link of navLinks; track link) {
       <div>
@@ -17,7 +16,6 @@
     }
   </div>
 
-  <!-- Mobile Navigation -->
   <button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-menu-btn">
     <mat-icon>menu</mat-icon>
   </button>

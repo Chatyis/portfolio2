@@ -1,0 +1,25 @@
+<mat-tab-group mat-align-tabs="center" animationDuration="500ms" class="skills-tabs">
+  @for (category of skillCategories; track category) {
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon>{{category.icon}}</mat-icon>
+        <span>{{category.name}}</span>
+      </ng-template>
+      <div class="skills-container">
+        @for (skill of category.skills; track skill) {
+          <div class="skill-item">
+            <div class="skill-header">
+              <h4>{{skill.name}}</h4>
+              <span class="skill-level" [ngClass]="getLevelClass(skill.level)">{{skill.level}}%</span>
+            </div>
+            <mat-progress-bar
+              mode="determinate"
+              [value]="skill.level"
+              [color]="getLevelClass(skill.level) === 'expert' ? 'primary' : 'accent'">
+            </mat-progress-bar>
+          </div>
+        }
+      </div>
+    </mat-tab>
+  }
+</mat-tab-group>

@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [
     RouterOutlet,
     HeaderComponent,
@@ -17,5 +17,12 @@ import { FooterComponent } from './footer/footer.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  private readonly _matIconRegistry = inject(MatIconRegistry);
+  private readonly _domSanitizer = inject(DomSanitizer);
+
+  constructor() {
+    this._matIconRegistry.addSvgIcon('github', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/github.svg'));
+    this._matIconRegistry.addSvgIcon('linkedin', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/linkedin.svg'));
+  }
   title = 'Portfolio';
 }

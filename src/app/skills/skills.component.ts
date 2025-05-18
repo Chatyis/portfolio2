@@ -6,78 +6,25 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 
-interface Skill {
-  name: string;
-  level: number;
-  icon?: string;
-}
-
-interface SkillCategory {
-  name: string;
-  icon: string;
-  skills: Skill[];
-}
+import { SkillSliderComponent } from './skill-slider/skill-slider.component';
 
 @Component({
   selector: 'app-skills',
-  standalone: true,
   imports: [
     CommonModule,
     MatProgressBarModule,
     MatCardModule,
     MatTabsModule,
     MatIconModule,
-    MatChipsModule
+    MatChipsModule,
+    SkillSliderComponent
   ],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
-  skillCategories: SkillCategory[] = [
-    {
-      name: 'Frontend Development',
-      icon: 'devices',
-      skills: [
-        { name: 'Angular', level: 90 },
-        { name: 'HTML/CSS', level: 90 },
-        { name: 'JavaScript', level: 85 },
-        { name: 'TypeScript', level: 85 },
-        { name: 'Tailwind CSS', level: 75 },
-        { name: 'SCSS/SASS', level: 85 }
-      ]
-    },
-    {
-      name: 'Backend Development',
-      icon: 'dns',
-      skills: [
-        { name: 'Node.js', level: 80 },
-        { name: 'Express', level: 75 },
-        { name: '.NET Core', level: 70 },
-        { name: 'RESTful APIs', level: 85 },
-        { name: 'MongoDB', level: 60 }
-      ]
-    },
-    {
-      name: 'Tools & Others',
-      icon: 'build',
-      skills: [
-        { name: 'Git', level: 85 },
-        { name: 'Docker', level: 65 },
-        { name: 'CI/CD', level: 70 },
-        { name: 'Figma', level: 75 },
-        { name: 'Jira', level: 80 }
-      ]
-    }
-  ];
-
-  tools: string[] = [
+  protected readonly tools: string[] = [
     'IntelliJ', 'Git', 'GitHub', 'NPM', 'Gitlab',
     'Docker', 'Figma', 'Aseprite', 'JIRA'
   ];
-
-  getLevelClass(level: number): string {
-    if (level >= 80) return 'expert';
-    if (level >= 60) return 'intermediate';
-    return 'beginner';
-  }
 }
