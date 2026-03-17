@@ -30,6 +30,7 @@ const angularApp = new AngularNodeAppEngine();
  * Serve static files from /browser
  */
 app.use(
+  '/portfolio',
   express.static(browserDistFolder, {
     maxAge: '1y',
     index: false,
@@ -40,7 +41,7 @@ app.use(
 /**
  * Handle all other requests by rendering the Angular application.
  */
-app.use('/**', (req, res, next) => {
+app.use('/portfolio/**', (req, res, next) => {
   angularApp
     .handle(req)
     .then((response) =>

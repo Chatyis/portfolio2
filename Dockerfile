@@ -1,9 +1,11 @@
-FROM node:18
+FROM node:22
 
 WORKDIR /usr/app
 
+RUN npm install pm2@latest -g
+
 COPY /dist/portfolio/ ./
 
-CMD node server/server.mjs
+CMD ["pm2-runtime", "node server/server.mjs"]
 
 EXPOSE 4100

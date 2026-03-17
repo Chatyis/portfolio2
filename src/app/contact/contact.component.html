@@ -37,7 +37,7 @@
           <a [href]="contactInfo.social.linkedin" target="_blank" aria-label="LinkedIn">
             <mat-icon svgIcon="linkedin"></mat-icon>
           </a>
-          <a [href]="contactInfo.social.mail" target="_blank" aria-label="Twitter">
+          <a [href]="contactInfo.social.mail" target="_blank" aria-label="Email">
             <mat-icon>alternate_email</mat-icon>
           </a>
         </div>
@@ -51,9 +51,9 @@
           <mat-label>Full Name</mat-label>
           <input matInput formControlName="name" placeholder="Your full name">
           @if (contactForm.get('name')?.hasError('required')) {
-            <mat-error>
-              Name is required
-            </mat-error>
+          <mat-error>
+            Name is required
+          </mat-error>
           }
         </mat-form-field>
 
@@ -61,14 +61,14 @@
           <mat-label>Email</mat-label>
           <input matInput formControlName="email" placeholder="Your email address" type="email">
           @if (contactForm.get('email')?.hasError('required')) {
-            <mat-error>
-              Email is required
-            </mat-error>
+          <mat-error>
+            Email is required
+          </mat-error>
           }
           @if (contactForm.get('email')?.hasError('email')) {
-            <mat-error>
-              Please enter a valid email address
-            </mat-error>
+          <mat-error>
+            Please enter a valid email address
+          </mat-error>
           }
         </mat-form-field>
 
@@ -76,9 +76,9 @@
           <mat-label>Subject</mat-label>
           <input matInput formControlName="title" placeholder="Subject of your message">
           @if (contactForm.get('title')?.hasError('required')) {
-            <mat-error>
-              Subject is required
-            </mat-error>
+          <mat-error>
+            Subject is required
+          </mat-error>
           }
         </mat-form-field>
 
@@ -86,14 +86,14 @@
           <mat-label>Message</mat-label>
           <textarea matInput formControlName="message" rows="5" placeholder="Your message"></textarea>
           @if (contactForm.get('message')?.hasError('required')) {
-            <mat-error>
-              Message is required
-            </mat-error>
+          <mat-error>
+            Message is required
+          </mat-error>
           }
           @if (contactForm.get('message')?.hasError('minlength')) {
-            <mat-error>
-              Message must be at least 10 characters
-            </mat-error>
+          <mat-error>
+            Message must be at least 10 characters
+          </mat-error>
           }
         </mat-form-field>
 
